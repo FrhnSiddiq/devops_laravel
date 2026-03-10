@@ -1,5 +1,9 @@
 node {
 
+    environment {
+        PROD_HOST = "10.105.87.254"
+    }
+
     stage('Checkout') {
         checkout scm
     }
