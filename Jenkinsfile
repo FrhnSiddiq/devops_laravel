@@ -29,6 +29,7 @@ node {
             sshagent(credentials: ['ssh.prod']) {
 
                 sh 'mkdir -p ~/.ssh'
+                sh 'touch ~/.ssh/known_hosts'
                 sh 'ssh-keyscan -H $PROD_HOST >> ~/.ssh/known_hosts'
 
                 sh '''
