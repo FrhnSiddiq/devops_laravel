@@ -30,7 +30,7 @@ node {
 
                 sh 'mkdir -p ~/.ssh'
                 sh 'touch ~/.ssh/known_hosts'
-                sh 'ssh-keyscan -H $PROD_HOST >> ~/.ssh/known_hosts'
+                sh 'ssh-keyscan -H $PROD_HOST >> ~/.ssh/known_hosts || true'
 
                 sh '''
                 rsync -rav --delete devops_lav/ ubuntu@$PROD_HOST:/home/ubuntu/prod.kelasdevops.xyz/ \
