@@ -5,14 +5,17 @@ node {
     }
 
     stage('Build') {
-        docker.image('shippingdocker/php-composer:7.4').inside('-u root') {
-            sh 'cd devops_lav && composer install'
+        docker.image('composer:2').inside('-u root') {
+            sh '''
+            cd devops_lav
+            composer install
+            '''
         }
     }
 
     stage('Testing') {
-        docker.image('ubuntu').inside('-u root') {
-            sh 'echo "Ini adalah test"'
+        docker.image('php:8.2-cli').inside('-u root') {
+            sh 'echo "Testing stage berjalan"'
         }
     }
 
