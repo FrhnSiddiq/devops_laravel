@@ -6,7 +6,7 @@ node {
 
     stage('Build') {
         docker.image('shippingdocker/php-composer:7.4').inside('-u root') {
-            sh 'composer install'
+            sh 'cd devops_lav && composer install'
         }
     }
 
