@@ -1,7 +1,7 @@
 node {
 
     environment {
-        PROD_HOST = "10.105.87.254"
+        PROD_HOST = "172.26.105.64"
     }
 
     stage('Checkout') {
